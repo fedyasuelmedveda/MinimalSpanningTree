@@ -1,5 +1,6 @@
 #include "Graph.h"
 #include"DSU.h"
+#include"Heap.h"
 Graph::Graph(int size, int numberOfEdges) {
 	this->size = size;
 	this->numberOfEdges = numberOfEdges;
@@ -15,10 +16,10 @@ void Graph::ReadEdges() {
 	}
 }
 
-//void Graph::SortEdges() {
-//	Heap* heap = new Heap(edges);
-//	edges = heap.Sort();
-//}
+void Graph::SortEdges() {
+	Heap* heap = new Heap(edges);
+	edges = heap->Sort();
+}
 
 
 vector<Edge*>* Graph::Kruskal() {
